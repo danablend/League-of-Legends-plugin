@@ -8,7 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="01d2c66b-4540-4754-b159-fa96f7c7e310" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/oasis/lol/GlobalXP.java" afterPath="$PROJECT_DIR$/src/com/oasis/lol/GlobalXP.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/oasis/lol/gui/MenuGui.java" afterPath="$PROJECT_DIR$/src/com/oasis/lol/gui/MenuGui.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/oasis/lol/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+            <state relative-caret-position="68">
+              <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -54,13 +53,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GlobalXP.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GlobalXP.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/oasis/lol/GlobalXP.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="45" column="41" lean-forward="false" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
+            <state relative-caret-position="408">
+              <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1689#1690#0" expanded="true" />
+                <element signature="e#1746#1747#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -386,6 +387,8 @@
           <caret line="122" column="5" lean-forward="false" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1689#1690#0" expanded="true" />
+            <element signature="e#1746#1747#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -448,6 +451,8 @@
           <caret line="122" column="5" lean-forward="false" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1689#1690#0" expanded="true" />
+            <element signature="e#1746#1747#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -573,6 +578,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/oasis/lol/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/oasis/lol/gui/MenuGui.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="386">
@@ -585,19 +598,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/oasis/lol/GlobalXP.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="45" column="41" lean-forward="false" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
+        <state relative-caret-position="408">
+          <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1689#1690#0" expanded="true" />
+            <element signature="e#1746#1747#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/oasis/lol/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>

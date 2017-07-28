@@ -52,24 +52,10 @@ public class GlobalXP {
     }
 
     public long getPlayerXp(Player player){
-
-        try {
-            PreparedStatement statement = plugin.getConnection()
-                    .prepareStatement("SELECT * FROM player_data WHERE UUID=?");
-            statement.setString(1, player.getUniqueId().toString());
-            ResultSet results = statement.executeQuery();
-            results.next();
-
-            return results.getLong("XP");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return 0;
-
+        return getExpByUUID(player.getUniqueId());
     }
 
-    public long getUUID(UUID uuid){
+    public long getExpByUUID(UUID uuid){
 
         ResultSet results;
 
