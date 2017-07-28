@@ -12,7 +12,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
 /**
- * Created by Daniel on 28/07/2017 at 22:25.
+ * Created by Danablend on 28/07/2017 at 22:25.
  */
 
 public enum Particle {

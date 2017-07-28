@@ -9,7 +9,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Created by Daniel on 28/07/2017 at 22:24.
+ * Created by Danablend on 28/07/2017 at 22:24.
  */
 
 public class MathUtils {
