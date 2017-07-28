@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="Murder:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/Murder_jar</output-path>
-    <root id="archive" name="Murder.jar">
-      <element id="module-output" name="LeagueOfLegendsLobby" />
-    </root>
-  </artifact>
-</component>

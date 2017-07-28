@@ -3,7 +3,6 @@ package com.oasis.lol;
 import com.oasis.lol.gui.MenuGui;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -17,12 +16,16 @@ import java.util.UUID;
  */
 public class Main extends JavaPlugin implements Listener{
 
+    private static Main instance;
+    public static final Main getInstance() { return instance; }
+
     private Connection connection;
     public String host, database, username, password;
     public int port;
 
     @Override
     public void onEnable() {
+        instance = this;
         getServer().getPluginManager().registerEvents(MenuGui.getInstance(), this);
     }
 
