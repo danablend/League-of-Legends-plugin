@@ -24,11 +24,11 @@ public class MenuGui implements Listener {
 
     private MenuGui(){}
 
-    ItemStack one = iu.nameItem(new ItemStack(Material.GOLD_INGOT), "§e§lShop");
-    ItemStack two = iu.nameItem(new ItemStack(Material.WOOD), "§c§lPlay");
-    ItemStack three = iu.nameItem(new ItemStack(Material.GRASS), "§d§lOptions");
-    String name = "§6§lMenu";
-    Inventory inventory = Bukkit.createInventory(null, 27, name);
+    private ItemStack one = iu.nameItem(new ItemStack(Material.GOLD_INGOT), "§e§lShop");
+    private ItemStack two = iu.nameItem(new ItemStack(Material.WOOD), "§c§lPlay");
+    private ItemStack three = iu.nameItem(new ItemStack(Material.GRASS), "§d§lOptions");
+    private String name = "§6§lMenu";
+    private Inventory inventory = Bukkit.createInventory(null, 27, name);
 
 
     public void open(Player player){

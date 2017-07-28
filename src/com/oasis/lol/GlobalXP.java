@@ -12,8 +12,6 @@ import java.util.UUID;
  */
 public class GlobalXP {
 
-    private static GlobalXP instance = new GlobalXP();
-    private GlobalXP(){}
     public static GlobalXP getInstance(){return instance; }
     private Main plugin = Main.getPlugin(Main.class);
 
@@ -47,6 +45,12 @@ public class GlobalXP {
     public final int togetlevel29 = 1308;
     public final int togetlevel30 = 1340;
 
+    private static GlobalXP instance = new GlobalXP();
+
+    private GlobalXP(){
+
+    }
+
     public long getPlayerXp(Player player){
 
         try {
@@ -65,7 +69,7 @@ public class GlobalXP {
 
     }
 
-    public long getUUIDXp(UUID uuid){
+    public long getUUID(UUID uuid){
 
         ResultSet results;
 
