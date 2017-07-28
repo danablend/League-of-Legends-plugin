@@ -17,6 +17,9 @@ public class GlobalXP {
     public static GlobalXP getInstance(){return instance; }
     private Main plugin = Main.getPlugin(Main.class);
 
+
+    //From LoL wiki
+    // XP needed to level up etc.
     public final int togetlevel2 = 88;
     public final int togetlevel3 = 92;
     public final int togetlevel4 = 99;
