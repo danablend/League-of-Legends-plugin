@@ -1,5 +1,6 @@
 package com.oasis.lol.gui;
 
+import com.oasis.lol.GameType;
 import com.oasis.lol.utils.ItemUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -10,10 +11,16 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
 /**
  * Created by Enderqura on 29/07/2017 at 17:52.
  */
 public class PlayGui implements Listener{
+
+    private static Map<UUID, GameType> chosen = new HashMap<>();
 
     private static PlayGui instance = new PlayGui();
     private ItemUtils iu = ItemUtils.getInstance();
@@ -29,6 +36,15 @@ public class PlayGui implements Listener{
     private ItemStack three = iu.nameItem(new ItemStack(Material.DIRT), "§d§lComing Soon");
     private String name = "§6§lPlay";
     private Inventory inventory = Bukkit.createInventory(null, 27, name);
+
+    public GameType getChosenType(UUID uuid){
+
+        if(!chosen.containsKey(uuid)) return null;
+
+        GameType t = chosen.get(uuid);
+
+        return t;
+    }
 
 
     public void open(Player player){

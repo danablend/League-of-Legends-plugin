@@ -2,7 +2,9 @@ package com.oasis.lol.gui;
 
 import com.oasis.lol.utils.ItemUtils;
 import org.bukkit.Bukkit;
+import org.bukkit.Instrument;
 import org.bukkit.Material;
+import org.bukkit.Note;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -61,6 +63,10 @@ public class MenuGui implements Listener {
             if(event.getCurrentItem().equals(two)){
 
                 PlayGui.getInstance().open(p);
+
+                p.playNote(p.getLocation(), Instrument.PIANO, Note.natural(2, Note.Tone.E));
+
+                return;
 
 
             }

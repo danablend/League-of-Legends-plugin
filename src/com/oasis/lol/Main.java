@@ -1,5 +1,6 @@
 package com.oasis.lol;
 
+import com.oasis.lol.gui.ChampionSelectorGui;
 import com.oasis.lol.gui.MenuGui;
 import com.oasis.lol.gui.PlayGui;
 import org.bukkit.Bukkit;
@@ -30,6 +31,7 @@ public class Main extends JavaPlugin implements Listener{
         getServer().getPluginManager().registerEvents(MenuGui.getInstance(), this);
         getServer().getPluginManager().registerEvents(GlobalXP.getInstance(), this);
         getServer().getPluginManager().registerEvents(PlayGui.getInstance(), this);
+        getServer().getPluginManager().registerEvents(ChampionSelectorGui.getInstance(), this);
 
         mysqlSetup();
     }
