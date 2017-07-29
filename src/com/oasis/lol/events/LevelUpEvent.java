@@ -7,7 +7,8 @@ import org.bukkit.event.HandlerList;
 /**
  * Created by Enderqura on 28/07/2017 at 20:24.
  */
-public class LevelUpEvent extends Event{
+
+public class LevelUpEvent extends Event {
 
     private int newlevel, oldlevel;
     private Player player;
@@ -18,7 +19,7 @@ public class LevelUpEvent extends Event{
         return null;
     }
 
-    public LevelUpEvent(int newlevel, int oldlevel, Player player){
+    public LevelUpEvent(int newlevel, int oldlevel, Player player) {
 
         this.oldlevel = oldlevel;
         this.newlevel = newlevel;
@@ -38,3 +39,4 @@ public class LevelUpEvent extends Event{
         return player;
     }
 }
+

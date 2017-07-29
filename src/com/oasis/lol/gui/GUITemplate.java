@@ -1,33 +1,30 @@
 package com.oasis.lol.gui;
 
+
 import com.oasis.lol.utils.ItemUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
-/**
- * Created by Enderqura on 28/07/2017 at 19:07.
- */
-public class MenuGui implements Listener {
+public class GUITemplate{
 
-    private static MenuGui instance = new MenuGui();
+    private static GUITemplate instance = new GUITemplate();
     private ItemUtils iu = ItemUtils.getInstance();
 
-    public static MenuGui getInstance() {
+    public static GUITemplate getInstance() {
         return instance;
     }
 
-    private MenuGui(){}
+    private GUITemplate(){}
 
-    private ItemStack one = iu.nameItem(new ItemStack(Material.GOLD_INGOT), "§e§lShop");
-    private ItemStack two = iu.nameItem(new ItemStack(Material.WOOD), "§c§lPlay");
-    private ItemStack three = iu.nameItem(new ItemStack(Material.GRASS), "§d§lOptions");
-    private String name = "§6§lMenu";
+    private ItemStack one = iu.nameItem(new ItemStack(Material.GOLD_INGOT), "§e§lItem One");
+    private ItemStack two = iu.nameItem(new ItemStack(Material.WOOD), "§c§lItem Two");
+    private ItemStack three = iu.nameItem(new ItemStack(Material.GRASS), "§d§lItem Three");
+    private String name = "§6§lName";
     private Inventory inventory = Bukkit.createInventory(null, 27, name);
 
 

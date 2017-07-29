@@ -12,8 +12,6 @@ import java.util.UUID;
  */
 public class GlobalXP {
 
-    private static GlobalXP instance = new GlobalXP();
-    private GlobalXP(){}
     public static GlobalXP getInstance(){return instance; }
     private Main plugin = Main.getPlugin(Main.class);
 
@@ -50,25 +48,17 @@ public class GlobalXP {
     public final int togetlevel29 = 1308;
     public final int togetlevel30 = 1340;
 
-    public long getPlayerXp(Player player){
+    private static GlobalXP instance = new GlobalXP();
 
-        try {
-            PreparedStatement statement = plugin.getConnection()
-                    .prepareStatement("SELECT * FROM player_data WHERE UUID=?");
-            statement.setString(1, player.getUniqueId().toString());
-            ResultSet results = statement.executeQuery();
-            results.next();
-
-            return results.getLong("XP");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return 0;
+    private GlobalXP(){
 
     }
 
-    public long getUUIDXp(UUID uuid){
+    public long getPlayerXp(Player player){
+        return getExpByUUID(player.getUniqueId());
+    }
+
+    public long getExpByUUID(UUID uuid){
 
         ResultSet results;
 

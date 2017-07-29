@@ -1,3 +1,0 @@
-<template>
-  <input-field default="com.oasis">IJ_BASE_PACKAGE</input-field>
-</template>
