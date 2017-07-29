@@ -1,6 +1,11 @@
 package com.oasis.lol;
 
+import com.oasis.lol.events.ExpGainEvent;
+import com.oasis.lol.events.LevelUpEvent;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,7 +15,7 @@ import java.util.UUID;
 /**
  * Created by Enderqura on 28/07/2017 at 19:34.
  */
-public class GlobalXP {
+public class GlobalXP implements Listener{
 
     public static GlobalXP getInstance(){return instance; }
     private Main plugin = Main.getPlugin(Main.class);
@@ -112,6 +117,148 @@ public class GlobalXP {
         }
 
         return 0;
+
+    }
+
+    public void addXpForPlayer(Player player, long amount){
+
+        try {
+            PreparedStatement statement = plugin.getConnection()
+                    .prepareStatement("UPDATE player_data SET XP=? WHERE UUID=?");
+            statement.setLong(1, getPlayerXp(player) + amount);
+            statement.setString(2, player.getUniqueId().toString());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void addXpForUUID(UUID uuid, long amount){
+
+        try {
+            PreparedStatement statement = plugin.getConnection()
+                    .prepareStatement("UPDATE player_data SET XP=? WHERE UUID=?");
+            statement.setLong(1, getExpByUUID(uuid) + amount);
+            statement.setString(2, uuid.toString());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void setExpForPlayer(Player player, long amount){
+
+        try {
+            PreparedStatement statement = plugin.getConnection()
+                    .prepareStatement("UPDATE player_data SET XP=? WHERE UUID=?");
+            statement.setLong(1, amount);
+            statement.setString(2, player.getUniqueId().toString());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void setPlayerLevel(Player player, int level){
+
+
+        try {
+            PreparedStatement statement = plugin.getConnection()
+                    .prepareStatement("UPDATE player_data SET XP=? WHERE UUID=?");
+            statement.setLong(1, level);
+            statement.setString(2, player.getUniqueId().toString());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void levelUpPlayer(Player player){
+
+
+        try {
+            PreparedStatement statement = plugin.getConnection()
+                    .prepareStatement("UPDATE player_data SET XP=? WHERE UUID=?");
+            statement.setLong(1, getPlayerLevel(player) + 1);
+            statement.setString(2, player.getUniqueId().toString());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public int getXpForNextLevel(UUID uuid){
+
+
+        int level = getUUIDLevel(uuid);
+
+        switch(level){
+            case 1: return togetlevel2;
+            case 2: return togetlevel3;
+            case 3: return togetlevel4;
+            case 4: return togetlevel5;
+            case 5: return togetlevel6;
+            case 6: return togetlevel7;
+            case 7: return togetlevel8;
+            case 8: return togetlevel9;
+            case 9: return togetlevel10;
+            case 10: return togetlevel11;
+            case 11: return togetlevel12;
+            case 12: return togetlevel13;
+            case 13: return togetlevel14;
+            case 14: return togetlevel15;
+            case 15: return togetlevel16;
+            case 16: return togetlevel17;
+            case 17: return togetlevel18;
+            case 18: return togetlevel19;
+            case 19: return togetlevel20;
+            case 20: return togetlevel21;
+            case 21: return togetlevel22;
+            case 22: return togetlevel23;
+            case 23: return togetlevel24;
+            case 24: return togetlevel25;
+            case 25: return togetlevel26;
+            case 26: return togetlevel27;
+            case 27: return togetlevel28;
+            case 28: return togetlevel29;
+            case 29: return togetlevel30;
+        }
+
+        return Integer.MAX_VALUE;
+
+    }
+
+    @EventHandler
+    public void onExpGain(ExpGainEvent event){
+
+        long before = getExpByUUID(event.getPlayer().getUniqueId());
+
+        addXpForPlayer(event.getPlayer(), event.getAmount());
+
+        if(getPlayerXp(event.getPlayer()) >= getXpForNextLevel(event.getPlayer().getUniqueId())){
+
+            long l = getPlayerXp(event.getPlayer()) - getXpForNextLevel(event.getPlayer().getUniqueId());
+
+            Bukkit.getServer().getPluginManager().callEvent(new LevelUpEvent(getPlayerLevel(event.getPlayer()), getPlayerLevel(event.getPlayer()) +1, event.getPlayer()));
+
+            setExpForPlayer(event.getPlayer(), l);
+
+            return;
+        }
+
+        Bukkit.getServer().getLogger().info(event.getPlayer().getName() + " earned " + event.getAmount() + " xp (Previously: " + before + ")");
+
+    }
+
+    @EventHandler
+    public void onLevelUp(LevelUpEvent event){
+
+        levelUpPlayer(event.getPlayer());
 
     }
 

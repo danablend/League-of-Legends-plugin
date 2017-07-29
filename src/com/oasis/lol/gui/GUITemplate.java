@@ -43,6 +43,10 @@ public class GUITemplate{
 
         if(event.getClickedInventory().getName().equals(name)){
 
+            if(!(event.getWhoClicked() instanceof Player)) return;
+
+            Player p = (Player) event.getWhoClicked();
+
             event.setCancelled(true);
 
             if(event.getCurrentItem().equals(one)){

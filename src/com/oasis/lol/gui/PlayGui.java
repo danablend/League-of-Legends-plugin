@@ -11,23 +11,23 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 /**
- * Created by Enderqura on 28/07/2017 at 19:07.
+ * Created by Enderqura on 29/07/2017 at 17:52.
  */
-public class MenuGui implements Listener {
+public class PlayGui implements Listener{
 
-    private static MenuGui instance = new MenuGui();
+    private static PlayGui instance = new PlayGui();
     private ItemUtils iu = ItemUtils.getInstance();
 
-    public static MenuGui getInstance() {
+    public static PlayGui getInstance() {
         return instance;
     }
 
-    private MenuGui(){}
+    private PlayGui(){}
 
-    private ItemStack one = iu.nameItem(new ItemStack(Material.GOLD_INGOT), "§e§lShop");
-    private ItemStack two = iu.nameItem(new ItemStack(Material.WOOD), "§c§lPlay");
-    private ItemStack three = iu.nameItem(new ItemStack(Material.GRASS), "§d§lOptions");
-    private String name = "§6§lMenu";
+    private ItemStack one = iu.nameItem(new ItemStack(Material.IRON_INGOT), "§e§lRanked");
+    private ItemStack two = iu.nameItem(new ItemStack(Material.DIAMOND), "§c§lCasual");
+    private ItemStack three = iu.nameItem(new ItemStack(Material.DIRT), "§d§lComing Soon");
+    private String name = "§6§lPlay";
     private Inventory inventory = Bukkit.createInventory(null, 27, name);
 
 
@@ -46,11 +46,11 @@ public class MenuGui implements Listener {
 
         if(event.getClickedInventory().getName().equals(name)){
 
-            event.setCancelled(true);
-
             if(!(event.getWhoClicked() instanceof Player)) return;
 
             Player p = (Player) event.getWhoClicked();
+
+            event.setCancelled(true);
 
             if(event.getCurrentItem().equals(one)){
 
@@ -60,7 +60,7 @@ public class MenuGui implements Listener {
 
             if(event.getCurrentItem().equals(two)){
 
-                PlayGui.getInstance().open(p);
+
 
 
             }

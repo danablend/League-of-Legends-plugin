@@ -1,6 +1,7 @@
 package com.oasis.lol;
 
 import com.oasis.lol.gui.MenuGui;
+import com.oasis.lol.gui.PlayGui;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;
@@ -20,13 +21,17 @@ public class Main extends JavaPlugin implements Listener{
     public static final Main getInstance() { return instance; }
 
     private Connection connection;
-    public String host, database, username, password;
-    public int port;
+    private String host, database, username, password;
+    private int port;
 
     @Override
     public void onEnable() {
         instance = this;
         getServer().getPluginManager().registerEvents(MenuGui.getInstance(), this);
+        getServer().getPluginManager().registerEvents(GlobalXP.getInstance(), this);
+        getServer().getPluginManager().registerEvents(PlayGui.getInstance(), this);
+
+        mysqlSetup();
     }
 
     @Override
@@ -37,7 +42,7 @@ public class Main extends JavaPlugin implements Listener{
     public void mysqlSetup() {
         host = "localhost";
         port = 4;
-        database = "player_data";
+        database = "lol_data";
         username = "root";
         password = "";
 
