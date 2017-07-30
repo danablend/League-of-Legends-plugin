@@ -146,7 +146,7 @@ public enum Champion {
     private String name;
     private ChampionType championType;
 
-    
+
 
     Champion() {
 
